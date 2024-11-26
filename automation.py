@@ -37,8 +37,9 @@ try:
     # Passo 4: Verifique o contador
     cart_counter = WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element((By.XPATH, '//*[@id="shopping_cart_container"]/a/span'), "1"))
     print("Contador atualizado para 1.")
+    time.sleep(2)
     cart_counter = driver.find_element(By.XPATH, '//*[@id="shopping_cart_container"]/a').click()
-
+    time.sleep(2)
     # Passo 5: Remover o produto do carrinho
     remove_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')))
     remove_button.click()
